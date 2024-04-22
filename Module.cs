@@ -14,19 +14,31 @@ namespace Mod
     [BepInPlugin(GUID, NAME, VERSION)]
     public class Module : BaseUnityPlugin
     {
-        public const string GUID = "creator.etg.modname";
-        public const string NAME = "MOD NAME";
-        public const string VERSION = "0.0.0";
+        public const string GUID = "Riley.etg.modname";
+        public const string NAME = "LetUsCookInTheDungeon";
+        public const string VERSION = "1.0.0";
         public const string TEXT_COLOR = "#00FFFF";
 
         public void Start()
         {
+
             ETGModMainBehaviour.WaitForGameManagerStart(GMStart);
         }
 
         public void GMStart(GameManager g)
         {
-            ExamplePassive.Register();
+            SpeedCandy.Register();
+            SpicyPepper.Register();
+            HealingBurger.Register();
+            BulkSpin.Register();
+
+
+            PeporoniSlicer.Add();
+
+           BrocChed.Add();
+
+            CupcakeCannon.Add();
+
             Log($"{NAME} v{VERSION} started successfully.", TEXT_COLOR);
         }
 
